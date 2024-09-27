@@ -12,3 +12,6 @@ th, td {
 table {
     margin: 0 auto;
 }
+.demo-chart {
+    height: 400px;
+  }

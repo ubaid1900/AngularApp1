@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { CommonModule } from '@angular/common';
+import { NgxEchartsDirective } from 'ngx-echarts';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule, CommonModule, NgxEchartsDirective
   ],
   providers: [],
   bootstrap: [AppComponent]
