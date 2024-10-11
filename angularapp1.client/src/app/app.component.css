@@ -1,14 +1,72 @@
 ﻿:host {
-    max-width: 1280px;
-    padding: 2rem;
-    text-align: center;
+  max-width: 1280px;
+  /* padding: 2rem; */
+  text-align: center;
 }
 
-th, td {
-    padding-left: 1rem;
-    padding-right: 1rem;
+th,
+td {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-div {
+/* div {
     margin: 0 auto;
+} */
+
+.banner {
+  font-size: xx-large;
+  font-family: fantasy;
+  font-style: italic;
+}
+/* styles.css */
+#wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Toggle Styles */
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+.list-group-item-action::after {
+  /* content: "\F229"; */
+  float: right;
+  font-weight: bold;
+}
+
+.list-group-item-action[aria-expanded="true"]::after {
+  /* content: "\F22B"; */
+  content: "X";
+}
+
+.list-group-item-action[aria-expanded="false"]::after {
+  /* content: "\F22B"; */
+  content: "V";
+}
+
+/* the following class seem like duplicates of the above two, 
+but when combined the background color is applied to only the content of after psuedo class   */
+.list-group-item-action[aria-expanded="false"] {
+  background-color: white;
+}
+
+.list-group-item-action[aria-expanded="true"] {
+  background-color: gray;
 }

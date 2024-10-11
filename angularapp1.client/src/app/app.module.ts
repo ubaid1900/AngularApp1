@@ -1,23 +1,27 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { CommonModule } from '@angular/common';
 import { NgxEchartsDirective } from 'ngx-echarts';
+import { HomeComponent } from './components/home/home.component';
+import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './app-routing.module';
+import { SalesComponent } from './components/sales/sales.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SalesComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule,
-    AppRoutingModule, CommonModule, NgxEchartsDirective
+    BrowserModule,
+    AppRoutingModule, CommonModule, NgxEchartsDirective,
+    NgbModule, NgbCollapseModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

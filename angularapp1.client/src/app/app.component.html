@@ -1,3 +1,121 @@
-<div><img src="https://pbs.twimg.com/profile_images/1552140872632119296/In7YWz3S_400x400.jpg" alt="banner"></div>
-<router-outlet></router-outlet>
-<div>footer</div>
+<div class="banner">
+  <i id="menu-toggle" class="bi bi-list" style="float: left"></i
+  ><span>Banner</span>
+</div>
+<!-- app.component.html -->
+<div class="d-flex toggled" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">Menu</div>
+    <div class="list-group list-group-flush">
+      <a
+        [routerLink]="'home'"
+        class="list-group-item list-group-item-action bg-light pl-5"
+        >Home</a
+      >
+      <a
+        (click)="
+          ngbCollapseOne.toggle(); isGroup1Collapsed = !isGroup1Collapsed
+        "
+        class="list-group-item list-group-item-action"
+        data-toggle="collapse"
+        role="button"
+        [attr.aria-expanded]="!isGroup1Collapsed"
+        aria-controls="collapseOne"
+        >Sales</a
+      >
+      <div
+        #ngbCollapseOne="ngbCollapse"
+        [ngbCollapse]="false"
+        class="collapse"
+        id="collapseOne"
+      >
+        <a
+          [routerLink]="'sales'"
+          class="list-group-item list-group-item-action bg-light pl-5"
+          >Sales</a
+        >
+        <a
+          [routerLink]="'performanceDashboard'"
+          class="list-group-item list-group-item-action bg-light pl-5"
+          >Performance Dashboard</a
+        >
+        <a
+          [routerLink]="'customerInquiry'"
+          class="list-group-item list-group-item-action bg-light pl-5"
+          >Customer Inquiry</a
+        >
+        <a
+          [routerLink]="'Scorecard'"
+          class="list-group-item list-group-item-action bg-light pl-5"
+          >Scorecard</a
+        >
+        <a
+          [routerLink]="'salesIncentive'"
+          class="list-group-item list-group-item-action bg-light pl-5"
+          >Sales Incentive</a
+        >
+      </div>
+
+      <a
+        (click)="ngbCollapseTwo.toggle(); isGroup2Collapsed = !isGroup2Collapsed"
+        class="list-group-item list-group-item-action"
+        data-toggle="collapse"
+        role="button"
+        [attr.aria-expanded]="!isGroup2Collapsed"
+        aria-controls="collapseTwo"
+        >Bank</a
+      >
+      <div
+        #ngbCollapseTwo="ngbCollapse"
+        [ngbCollapse]="true"
+        class="collapse"
+        id="collapseTwo"
+      >
+        <a
+          [routerLink]="'bank'"
+          class="list-group-item list-group-item-action bg-light pl-5"
+          >Bank</a
+        >
+      </div>
+
+      <a
+        (click)="collapseThree.toggle(); isGroup3Collapsed = !isGroup3Collapsed"
+        class="list-group-item list-group-item-action"
+        data-toggle="collapse"
+        role="button"
+        [attr.aria-expanded]="!isGroup3Collapsed"
+        aria-controls="collapseThree"
+        >Marketing</a
+      >
+      <div
+        #collapseThree="ngbCollapse"
+        [ngbCollapse]="true"
+        class="collapse"
+        id="collapseThree"
+      >
+        <a
+          [routerLink]="'marketing'"
+          class="list-group-item list-group-item-action bg-light pl-5"
+          >Marketing</a
+        >
+        <a
+          [routerLink]="'leads'"
+          class="list-group-item list-group-item-action bg-light pl-5"
+          >Leads</a
+        >
+      </div>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
