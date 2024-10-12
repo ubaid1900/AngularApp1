@@ -1,5 +1,3 @@
-using System.Data.Entity;
-
 namespace AngularApp1.Server
 {
     public class WeatherForecast
@@ -11,10 +9,5 @@ namespace AngularApp1.Server
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
         public string? Summary { get; set; }
-    }
-
-    public class PortalContext : DbContext
-    {
-        public DbSet<Access>? Accesses { get; set; }
     }
 }
